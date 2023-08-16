@@ -1,0 +1,59 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
+    "withGlobalTauri": false
+  },
+  "package": {
+    "productName": "my-first-app",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "updater": {
+      "active": true,
+      "dialog": true,
+      "endpoints": ["https://github.com/tangjianbei/my-first-app/blob/main/install.json"],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEJBRTEwQkY2QTkwRDIxOUQKUldTZElRMnA5Z3ZodXRLVmFxWGRXV2lvWjhwSUhkYitndXZqUGt2OXZnRDNpY2lRditOV3lkKzAK"
+    },
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "http": {
+        "scope": ["http://oa.chison.com.cn:44366/wui/index.html#/?logintype=1&time=1673233732321&_key=hjxkva"]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.tauri.mytest1",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "my-first-app",
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
+    }
+  }
+}
