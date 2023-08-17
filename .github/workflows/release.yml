@@ -14,8 +14,8 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                # 选择编译平台
-                platform: [macos-latest, ubuntu-20.04, windows-latest]
+                # 选择编译平台 macos-latest, ubuntu-20.04, 
+                platform: [windows-latest]
         runs-on: windows-latest
         steps:
             - name: Checkout repository
@@ -42,12 +42,12 @@ jobs:
                   node-version: 16
  
             # 使用 pnpm 作为包管理器
-            - name: Install npm
-              uses: npm/action-setup@v2
-              id: npm-install
-              with:
-                  version: 8
-                  run_install: false
+            # - name: Install npm
+            #   uses: npm/action-setup@v2
+            #   id: npm-install
+            #   with:
+            #       version: 8
+            #       run_install: false
  
             - name: Install app dependencies and build it
               run: npm install && npm run build
